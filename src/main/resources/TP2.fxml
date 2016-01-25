@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLController">
+   <children>
+      <VBox prefHeight="100.0" prefWidth="100.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Label text="Delais d'execution" />
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="T1 (en ms)" />
+                              <TextField fx:id="t1TextField" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="T2 (en ms)" />
+                              <TextField fx:id="t2TextField" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+         <children>
+            <Label text="Quantité" />
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Delta T1" />
+                        <TextField fx:id="deltaT1TextField" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Delta T2" />
+                        <TextField fx:id="deltaT2TextField" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+         <children>
+            <Label text="Exécution des opérations" />
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Button fx:id="demarrerButton" mnemonicParsing="false" onAction="#demarrer" text="Démarrer" />
+                  <Button fx:id="arreterButton" mnemonicParsing="false" onAction="#arreter" text="Arrêter" />
+                  <Button fx:id="resetButton" mnemonicParsing="false" onAction="#reset" text="R.A.Z." />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label text="Sommaire des opérations" />
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="300.0" spacing="202.0">
+               <children>
+                  <Label text="Quantité en stock:" />
+                  <TextField fx:id="quantiteTextField" editable="false" prefWidth="100.0" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0">
+               <children>
+                  <Label text="Ruptures de stock:" />
+                  <TextField fx:id="rupturesTextField" editable="false" prefWidth="100.0" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="195.0">
+               <children>
+                  <Label text="Total des pénalités:" />
+                  <TextField fx:id="penalitesTextField" editable="false" prefWidth="100.0" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="225.0">
+               <children>
+                  <Label text="Stock moyen:" />
+                  <TextField fx:id="stockMoyenTextField" editable="false" prefWidth="100.0" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="198.0">
+               <children>
+                  <Label text="Coût Stock moyen:" />
+                  <TextField fx:id="coutStockMoyenTextField" editable="false" prefWidth="100.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+         <children>
+            <Label text="Tableau des opérations" />
+            <TableView prefHeight="200.0" prefWidth="200.0" fx:id="tableView">
+              <columns>
+                <TableColumn fx:id="numColumn" prefWidth="75.0" text="Num" />
+                <TableColumn fx:id="threadColumn" prefWidth="75.0" text="T(x)" />
+                  <TableColumn fx:id="deltaColumn" prefWidth="75.0" text="Delta" />
+                  <TableColumn fx:id="stockColumn" prefWidth="75.0" text="Stock" />
+                  <TableColumn fx:id="rsColumn" prefWidth="75.0" text="RS" />
+                  <TableColumn fx:id="qrsColumn" prefWidth="75.0" text="QRS" />
+                  <TableColumn fx:id="penaltyColumn" prefWidth="75.0" text="P($)" />
+                  <TableColumn fx:id="qteMoyColumn" prefWidth="75.0" text="QteMoy" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</VBox>
